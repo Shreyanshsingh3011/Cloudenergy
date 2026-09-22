@@ -16,6 +16,7 @@ button,input,select{font:inherit}
 .menu{display:none}
 .page{display:none}
 .page.active{display:block}
+.page-home>section:not(.hero):not(.trust-strip),.route-page>section:not(.inner-hero),footer{content-visibility:auto;contain-intrinsic-size:auto 720px}
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center;min-height:690px;padding-top:70px;padding-bottom:70px}
 .pill,.eyebrow{display:inline-flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:1.5px;font-size:11px;font-weight:700;color:#417052}
 .pill{background:#edf8ef;padding:8px 12px;border-radius:99px}
