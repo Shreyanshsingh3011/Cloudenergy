@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Reserve renewable-energy capacity from remotely located hybrid solar, storage and intelligent energy assets—without installing panels on your rooftop.">
+<meta name="theme-color" content="#ffffff">
+<title>CloudEnergy — Solar benefits, without rooftop installation</title>
+<link rel="icon" href="/cloudenergy-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="site-header">
+<div class="nav-wrap">
+<a class="logo" href="/" aria-label="CloudEnergy home">
+<img src="/cloudenergy-logo.png" alt="CloudEnergy">
+</a>
+<button class="menu" aria-label="Toggle navigation" aria-expanded="false">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</button>
+<nav class="main-nav">
+<a href="/#calculator">Solar calculator</a>
+<a href="/how-it-works">How it works</a>
+<a href="/data-centres">Data centres</a>
+<a href="/enterprise">Enterprise</a>
+<a href="/about">About</a>
+</nav>
+<a class="nav-button" href="/#early-access">Join early access</a>
+</div>
+</header>
+<main class="page page-home" data-route="/">
+<section class="hero section-shell">
+<div class="hero-copy">
+<div class="pill">
+<span>
+</span> Built for global energy markets</div>
+<h1>Solar savings.<br>
+<em>No rooftop required.</em>
+</h1>
+<p>Reserve clean-energy capacity from remotely located renewable plants and use the allocated energy benefits to reduce your electricity costs.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#calculator">Calculate your savings <b>→</b>
+</a>
+<a class="btn btn-secondary" href="/how-it-works">See how it works</a>
+</div>
+<div class="proof-row">
+<div>
+<strong>100+ MW</strong>
+<span>Demand represented by LOIs</span>
+</div>
+<div>
+<strong>Up to 50%+</strong>
+<span>Target bill-cost reduction*</span>
+</div>
+<div>
+<strong>1 GW</strong>
+<span>Operating ambition by 2031</span>
+</div>
+</div>
+</div>
+<div class="hero-visual" aria-label="CloudEnergy allocation overview">
+<div class="sun-card">
+<span class="sun-disc">☀</span>
+<div>
+<small>REMOTE CLEAN-ENERGY NETWORK</small>
+<strong>Generation + Storage</strong>
+</div>
+</div>
+<div class="flow-card">
+<div>☀<span>Renewable plant</span>
+</div>
+<i>→</i>
+<div>▣<span>Digital allocation</span>
+</div>
+<i>→</i>
+<div>⌂<span>Your energy bill</span>
+</div>
+</div>
+<div class="metric-float one">
+<small>Capacity mapped</small>
+<strong>2.0 MW</strong>
+<span>Illustrative allocation</span>
+</div>
+<div class="metric-float two">
+<small>Energy visibility</small>
+<strong>Live</strong>
+<span>Generation · allocation · credits</span>
+</div>
+</div>
+</section>
+<section class="trust-strip">
+<div class="section-shell">
+<span>ONE COORDINATED PLATFORM</span>
+<b>Hybrid renewables</b>
+<i>+</i>
+<b>Battery storage</b>
+<i>+</i>
+<b>Intelligent EMS</b>
+<i>+</i>
+<b>Digital reservation</b>
+</div>
+</section>
+<section class="vision section-shell">
+<div class="section-title">
+<span>Why CloudEnergy</span>
+<h2>Clean energy access should not depend on owning the right rooftop.</h2>
+</div>
+<div class="vision-copy">
+<p>Rooftop space, geography, capital and maintenance keep millions of homes and businesses from accessing renewable energy. CloudEnergy moves generation to where it performs best and digitally maps contracted capacity to the people and organisations that reserve it.</p>
+<a href="/about">Our mission <b>→</b>
+</a>
+</div>
+</section>
+<section id="calculator" class="calculator-wrap">
+<div class="section-shell">
+<div class="center-head">
+<span class="eyebrow">Solar savings calculator</span>
+<h2>Find the capacity behind your electricity bill</h2>
+<p>Adjust your bill, tariff and term to receive an instant indicative solar-capacity and savings estimate.</p>
+</div>
+<div class="calculator-card">
+<form class="calc-controls" id="energy-calculator">
+<h3>Your electricity details</h3>
+<p>Enter your current consumption assumptions.</p>
+<label class="field-label" for="country">Select your market</label>
+<select id="country">
+<option value="IN">India · INR</option>
+<option value="GB">United Kingdom · GBP</option>
+<option value="US">United States · USD</option>
+<option value="CA">Canada · CAD</option>
+<option value="JP">Japan · JPY</option>
+<option value="SA">Saudi Arabia · SAR</option>
+<option value="DE">Germany · EUR</option>
+<option value="FR">France · EUR</option>
+<option value="IT">Italy · EUR</option>
+<option value="ES">Spain · EUR</option>
+<option value="NL">Netherlands · EUR</option>
+<option value="AE">United Arab Emirates · AED</option>
+<option value="AU">Australia · AUD</option>
+<option value="SG">Singapore · SGD</option>
+</select>
+<div class="slider-field">
+<div>
+<label for="bill">Monthly electricity bill</label>
+<output id="bill-output">₹5,000</output>
+</div>
+<input id="bill" type="range" min="500" max="50000" step="500" value="5000">
+<small>
+<span id="bill-min">₹500</span>
+<span id="bill-max">₹50,000</span>
+</small>
+</div>
+<div class="slider-field">
+<div>
+<label for="rate">Electricity rate</label>
+<output id="rate-output">₹8.00/unit</output>
+</div>
+<input id="rate" type="range" min="4" max="15" step=".5" value="8">
+<small>
+<span id="rate-min">₹4</span>
+<span id="rate-max">₹15</span>
+</small>
+</div>
+<div class="slider-field">
+<div>
+<label for="tenure">Project tenure</label>
+<output id="tenure-output">15 years</output>
+</div>
+<input id="tenure" type="range" min="10" max="25" step="1" value="15">
+<small>
+<span>10 years</span>
+<span>25 years</span>
+</small>
+</div>
+<div class="consumption">
+<div>⚡</div>
+<div>
+<span>Estimated consumption</span>
+<strong id="consumption">625 units/month</strong>
+<small id="daily-consumption">20.8 units/day</small>
+</div>
+</div>
+<div class="plant-note">
+<b>☀ Optimised remote plants</b>
+<p>Generation estimates use strong-solar-resource assumptions. Actual project output and settlement will vary.</p>
+</div>
+</form>
+<div class="calc-results" aria-live="polite">
+<div class="capacity-result">
+<span>Recommended capacity</span>
+<strong id="capacity">4.5 <small>kW</small>
+</strong>
+<p id="generation">Expected generation ~630 units/month</p>
+</div>
+<div class="result-grid">
+<article>
+<div class="result-icon green">₹</div>
+<span>Upfront reservation estimate</span>
+<strong id="investment">₹2.03 L</strong>
+<small>Indicative planning amount</small>
+</article>
+<article>
+<div class="result-icon blue">↘</div>
+<span>Monthly solar savings</span>
+<strong id="monthly-saving">₹5,000</strong>
+<small id="saving-percent">Up to 100% of current bill</small>
+</article>
+<article>
+<div class="result-icon yellow">☀</div>
+<span>Annual solar savings</span>
+<strong id="annual-saving">₹60,000</strong>
+<small>Subject to generation and settlement</small>
+</article>
+<article>
+<div class="result-icon teal">♻</div>
+<span>Annual CO₂ avoided</span>
+<strong id="co2">6.2 t</strong>
+<small>Grid-displacement estimate</small>
+</article>
+</div>
+<div class="payback">
+<div>
+<span>Estimated payback</span>
+<strong id="payback">3 years 5 months</strong>
+</div>
+<div>
+<span>Remaining savings period</span>
+<strong id="savings-term">~11 years 8 months</strong>
+</div>
+</div>
+<p class="disclaimer" id="calc-summary">This is an indicative planning estimate, not a commercial quote or guaranteed saving.</p>
+<a class="btn btn-primary full" href="#early-access">Reserve your capacity <b>→</b>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="steps section-shell">
+<div class="center-head">
+<span class="eyebrow">How it works</span>
+<h2>Clean-energy access in four steps</h2>
+<p>A simpler route from electricity demand to long-term renewable capacity.</p>
+</div>
+<div class="step-grid">
+<article>
+<b>01</b>
+<div>⌁</div>
+<h3>Estimate demand</h3>
+<p>Use your bill or load profile to understand the capacity you need.</p>
+</article>
+<article>
+<b>02</b>
+<div>◎</div>
+<h3>Reserve capacity</h3>
+<p>Agree a defined capacity or annual energy allocation for a fixed term.</p>
+</article>
+<article>
+<b>03</b>
+<div>☀</div>
+<h3>Generate and store</h3>
+<p>Hybrid renewable assets and BESS produce and optimise clean power.</p>
+</article>
+<article>
+<b>04</b>
+<div>✓</div>
+<h3>Receive benefits</h3>
+<p>Track contracted allocations, performance and eligible bill credits.</p>
+</article>
+</div>
+<div class="section-link">
+<a href="/how-it-works">Explore the full model <b>→</b>
+</a>
+</div>
+</section>
+<section class="dc-feature">
+<div class="section-shell dc-grid">
+<div>
+<span class="eyebrow">Powering AI infrastructure</span>
+<h2>Data centres run on grid power—but the cost can be enormous.</h2>
+<p>Most data centres will continue using the grid for reliable, continuous electricity. CloudEnergy gives them a way to digitally reserve solar capacity from remotely located plants, reducing energy costs without needing enough onsite land or rooftop space for solar.</p>
+<div class="dc-points">
+<div>
+<b>Keep using the grid</b>
+<span>CloudEnergy complements existing grid supply; it does not replace operational reliability.</span>
+</div>
+<div>
+<b>Predictable energy cost</b>
+<span>Long-term contracted capacity with lower-cost renewable supply.</span>
+</div>
+<div>
+<b>No onsite solar constraint</b>
+<span>Reserve capacity from remote solar plants when local land or rooftop space is insufficient.</span>
+</div>
+<div>
+<b>Auditable carbon impact</b>
+<span>Track generation, allocation and avoided grid emissions.</span>
+</div>
+</div>
+<a class="btn btn-primary" href="/data-centres">Explore data-centre energy →</a>
+</div>
+<div class="dc-system" aria-label="Data centre energy architecture">
+<div class="dc-status">
+<span>
+</span> HYBRID ENERGY SYSTEM</div>
+<div class="dc-flow">
+<article>
+<small>SOLAR + WIND</small>
+<strong>Generate</strong>
+<span>Optimally located assets</span>
+</article>
+<i>→</i>
+<article>
+<small>BESS</small>
+<strong>Store</strong>
+<span>Optimise solar availability</span>
+</article>
+<i>→</i>
+<article>
+<small>EMS</small>
+<strong>Optimise</strong>
+<span>Measure and allocate</span>
+</article>
+</div>
+<div class="dc-load">
+<div>
+<span>CONTRACTED CAPACITY</span>
+<strong>20 MW</strong>
+</div>
+<div>
+<span>LOAD PROFILE</span>
+<strong>24 / 7</strong>
+</div>
+<div>
+<span>VISIBILITY</span>
+<strong>Real time</strong>
+</div>
+</div>
+<div class="dc-chart">
+<span>Illustrative remote-solar generation profile</span>
+<div class="bars">
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+</div>
+</div>
+<small class="dc-note">Illustrative architecture—not a live operating project.</small>
+</div>
+</div>
+</section>
+<section class="audiences">
+<div class="section-shell">
+<div class="section-title light">
+<span>Built for every scale</span>
+<h2>One platform. Different energy needs.</h2>
+</div>
+<div class="audience-grid">
+<article>
+<span>01</span>
+<h3>Homes & communities</h3>
+<p>Access renewable-energy benefits when individual rooftop installations are impractical.</p>
+<a href="#early-access">Join early access →</a>
+</article>
+<article>
+<span>02</span>
+<h3>Industry & commerce</h3>
+<p>Plan long-term, lower-cost renewable supply around operating demand.</p>
+<a href="/enterprise">Explore enterprise →</a>
+</article>
+<article>
+<span>03</span>
+<h3>Data centres & AI</h3>
+<p>Reserve scalable clean-power capacity for high, continuous compute loads.</p>
+<a href="/data-centres">Explore data centres →</a>
+</article>
+</div>
+</div>
+</section>
+<section class="pipeline section-shell">
+<div>
+<span class="eyebrow">Demand-led development</span>
+<h2>Building from customer demand—not speculative listings.</h2>
+<p>Letters of intent representing more than 100 MW of potential demand are informing CloudEnergy’s first project pipeline.</p>
+</div>
+<div class="pipeline-card">
+<span>LOI DEMAND PIPELINE</span>
+<strong>100<sup>+</sup>
+<small>MW</small>
+</strong>
+<div>
+<b>Stage</b>
+<span>Project development</span>
+</div>
+<div>
+<b>Market reach</b>
+<span>Designed for global markets</span>
+</div>
+<div>
+<b>Operating ambition</b>
+<span>1 GW by 2031</span>
+</div>
+</div>
+</section>
+<section id="early-access" class="early-access">
+<div class="section-shell early-grid">
+<div>
+<span class="eyebrow">Early access</span>
+<h2>Help shape the first CloudEnergy projects.</h2>
+<p>Register indicative interest as an energy buyer, community, developer, technology partner or strategic investor. No payment is required.</p>
+<ul>
+<li>Early project and market updates</li>
+<li>Priority for capacity discussions</li>
+<li>Commercial assessment when projects open</li>
+</ul>
+</div>
+<form id="interest-form" class="interest-form">
+<label>Full name<input name="name" required placeholder="Your name">
+</label>
+<label>Work email<input name="email" type="email" required placeholder="you@company.com">
+</label>
+<div class="form-row">
+<label>I am a<select name="type">
+<option>Energy buyer</option>
+<option>Community representative</option>
+<option>Project developer</option>
+<option>Technology partner</option>
+<option>Strategic investor</option>
+</select>
+</label>
+<label>Market<select name="market">
+<option>India</option>
+<option>United Kingdom</option>
+<option>Saudi Arabia</option>
+<option>United States</option>
+<option>Canada</option>
+<option>Japan</option>
+<option>Europe</option>
+<option>Other / International</option>
+</select>
+</label>
+</div>
+<label>Indicative requirement<input name="requirement" placeholder="e.g. 500 kW or 1 million units/year">
+</label>
+<button class="btn btn-primary full" type="submit">Prepare early-access request →</button>
+<p class="form-note">No payment or commitment. Submitting prepares an email request in your mail app.</p>
+<div class="form-status" role="status">
+</div>
+</form>
+</div>
+</section>
+<section id="faq" class="faq section-shell">
+<div class="center-head">
+<span class="eyebrow">Frequently asked questions</span>
+<h2>Clear answers about the model</h2>
+</div>
+<div class="faq-list">
+<details>
+<summary>What does capacity reservation mean?</summary>
+<p>A customer contracts for a defined renewable capacity or annual energy allocation associated with generation and storage assets. CloudEnergy manages the infrastructure and digital allocation layer.</p>
+</details>
+<details>
+<summary>Do customers own individual solar panels?</summary>
+<p>No. Customers reserve contracted capacity or energy benefits rather than owning and operating the entire physical asset.</p>
+</details>
+<details>
+<summary>Can this work without rooftop installation?</summary>
+<p>Yes—that is the core proposition. Assets can be located where renewable resources and project economics are stronger, subject to applicable market and settlement rules.</p>
+</details>
+<details>
+<summary>Are calculator results guaranteed?</summary>
+<p>No. The calculator provides indicative planning estimates. A binding proposal requires project, tariff, regulatory, financing and customer-demand assessment.</p>
+</details>
+<details>
+<summary>Is CloudEnergy currently accepting payments?</summary>
+<p>No. CloudEnergy is currently developing its first projects. Early-access registration is only an expression of interest and requires no payment.</p>
+</details>
+</div>
+</section>
+</main>
+<main class="page route-page" data-route="/how-it-works">
+<section class="inner-hero section-shell">
+<span class="eyebrow">How it works</span>
+<h1>From electricity demand to reserved clean-energy capacity.</h1>
+<p>CloudEnergy coordinates project development, generation, battery storage, energy management and contractual allocation in one operating model.</p>
+</section>
+<section class="detail-flow section-shell">
+<article>
+<b>01</b>
+<h2>Demand assessment</h2>
+<p>We analyse customer load, current tariff, operating hours, location and target savings to determine an indicative capacity or fixed annual-energy requirement.</p>
+</article>
+<article>
+<b>02</b>
+<h2>Project matching</h2>
+<p>Demand is matched with planned or aggregated solar, wind, hybrid and BESS assets located where generation and grid economics are strongest.</p>
+</article>
+<article>
+<b>03</b>
+<h2>Long-term reservation</h2>
+<p>The customer contracts for a defined allocation and term. Commercial structures may combine an upfront reservation contribution with a lower per-unit energy charge.</p>
+</article>
+<article>
+<b>04</b>
+<h2>Intelligent operation</h2>
+<p>The EMS forecasts generation and demand, coordinates battery dispatch and maintains auditable records of contracted allocations.</p>
+</article>
+<article>
+<b>05</b>
+<h2>Benefits and visibility</h2>
+<p>Customers receive contracted energy benefits or eligible credits and visibility into generation, allocation, savings and environmental impact.</p>
+</article>
+</section>
+<section class="page-cta">
+<div class="section-shell">
+<h2>Estimate your capacity in under a minute.</h2>
+<a class="btn btn-primary" href="/#calculator">Open calculator →</a>
+</div>
+</section>
+</main>
+<main class="page route-page" data-route="/enterprise">
+<section class="inner-hero section-shell">
+<span class="eyebrow">Enterprise solutions</span>
+<h1>Clean power designed around serious energy demand.</h1>
+<p>For industrial facilities, commercial portfolios and data centres seeking long-term cost visibility and lower-carbon electricity.</p>
+</section>
+<section class="enterprise-grid section-shell">
+<article>
+<span>Industrial & manufacturing</span>
+<h2>Align supply with production loads</h2>
+<p>Model hybrid generation, storage and contracted allocation around shifts, demand peaks and operating continuity.</p>
+</article>
+<article>
+<span>Commercial portfolios</span>
+<h2>Aggregate demand across sites</h2>
+<p>Build a coordinated renewable strategy across offices, retail, logistics and distributed facilities.</p>
+</article>
+<article>
+<span>Data centres</span>
+<h2>Support continuous high loads</h2>
+<p>Combine renewable assets, BESS and EMS optimisation for growing digital-infrastructure demand.</p>
+</article>
+<article>
+<span>Communities</span>
+<h2>Share access without rooftop constraints</h2>
+<p>Create community-scale allocations for residential groups and locations where individual installations are impractical.</p>
+</article>
+</section>
+<section class="enterprise-band">
+<div class="section-shell">
+<div>
+<span>Example structure</span>
+<h2>2 MW contracted demand → 3 MW developed capacity</h2>
+</div>
+<p>Excess capacity can improve generation resilience and asset economics. Final structures depend on project design, regulation and customer agreements.</p>
+</div>
+</section>
+<section class="page-cta">
+<div class="section-shell">
+<h2>Discuss your demand profile.</h2>
+<a class="btn btn-primary" href="/#early-access">Request commercial assessment →</a>
+</div>
+</section>
+</main>
+<main class="page route-page" data-route="/data-centres">
+<section class="inner-hero dc-inner section-shell">
+<span class="eyebrow">Data centres & AI infrastructure</span>
+<h1>Lower the cost of grid-powered computing with digitally reserved solar.</h1>
+<p>Data centres can continue relying on the grid while reserving solar capacity from CloudEnergy’s remotely located plants. The allocated solar-energy benefit can reduce electricity costs without requiring large onsite installations.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="/#early-access">Discuss data-centre demand →</a>
+<a class="btn btn-secondary" href="#dc-model">See the architecture</a>
+</div>
+</section>
+<section class="dc-challenges section-shell">
+<div class="center-head">
+<span class="eyebrow">The cost challenge</span>
+<h2>Continuous grid power is reliable—but expensive</h2>
+<p>Data centres consume electricity around the clock and generally depend on the grid for operational reliability. Their challenge is the cost of that continuous consumption and the difficulty of installing enough solar at each facility to offset it.</p>
+</div>
+<div class="challenge-grid">
+<article>
+<b>01</b>
+<h3>High grid expenditure</h3>
+<p>Large 24/7 compute loads create substantial monthly electricity costs and long-term tariff exposure.</p>
+</article>
+<article>
+<b>02</b>
+<h3>Limited onsite space</h3>
+<p>Rooftops and nearby land are rarely sufficient to install solar capacity matching total data-centre demand.</p>
+</article>
+<article>
+<b>03</b>
+<h3>Location constraints</h3>
+<p>Solar performance and available land at the facility may be weaker than at optimally located remote plants.</p>
+</article>
+<article>
+<b>04</b>
+<h3>Renewable targets</h3>
+<p>Operators need measurable solar allocation and cost benefits while keeping their existing grid connection.</p>
+</article>
+</div>
+</section>
+<section id="dc-model" class="dc-model">
+<div class="section-shell">
+<div class="section-title light">
+<span>CloudEnergy architecture</span>
+<h2>Remote solar capacity, digitally allocated alongside grid supply.</h2>
+</div>
+<div class="dc-model-grid">
+<article>
+<b>01</b>
+<h3>Hybrid generation</h3>
+<p>Solar, wind and complementary assets can be developed or aggregated across strong-resource locations.</p>
+</article>
+<article>
+<b>02</b>
+<h3>Battery storage</h3>
+<p>BESS can optimise the availability and value of solar generation without being presented as a replacement for the data centre’s grid supply.</p>
+</article>
+<article>
+<b>03</b>
+<h3>Intelligent EMS</h3>
+<p>Forecasting measures generation, storage activity and each customer’s contracted digital allocation.</p>
+</article>
+<article>
+<b>04</b>
+<h3>Capacity reservation</h3>
+<p>Data centres digitally reserve defined solar capacity or annual generated units from remotely located plants.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="dc-commercial section-shell">
+<div>
+<span class="eyebrow">Commercial direction</span>
+<h2>Reserve solar around the compute and cost roadmap.</h2>
+<p>CloudEnergy can evaluate grid consumption, annual energy requirements, current tariff and growth phases—then size a remote solar reservation designed to reduce energy expenditure while the facility remains grid connected.</p>
+</div>
+<div class="dc-example">
+<span>ILLUSTRATIVE STRUCTURE</span>
+<div>
+<b>Data-centre grid demand</b>
+<strong>20 MW</strong>
+</div>
+<div>
+<b>Digitally reserved solar</b>
+<strong>Defined allocation</strong>
+</div>
+<div>
+<b>Existing supply</b>
+<strong>Grid remains primary</strong>
+</div>
+<div>
+<b>Contract</b>
+<strong>Long-term reservation</strong>
+</div>
+<small>Illustrative only. Final allocation and savings depend on consumption, tariff, solar generation, regulation and contractual settlement.</small>
+</div>
+</section>
+<section class="page-cta">
+<div class="section-shell">
+<h2>Want to reduce data-centre electricity costs?</h2>
+<a class="btn btn-primary" href="/#early-access">Share your grid bill and demand →</a>
+</div>
+</section>
+</main>
+<main class="page route-page" data-route="/about">
+<section class="inner-hero section-shell">
+<span class="eyebrow">About CloudEnergy</span>
+<h1>Building an access layer for the next energy system.</h1>
+<p>CloudEnergy is developing a globally scalable hybrid renewable-energy, battery-storage and digital capacity-reservation platform.</p>
+</section>
+<section class="about-story section-shell">
+<div>
+<span class="eyebrow">The problem</span>
+<h2>Renewable access is still tied to infrastructure ownership.</h2>
+</div>
+<p>Millions of consumers cannot install sufficient rooftop solar because of space, ownership, geography, financing or maintenance constraints. Large energy users face a different challenge: securing affordable clean power with dependable supply and transparent performance.</p>
+<div>
+<span class="eyebrow">Our direction</span>
+<h2>Place infrastructure where it performs best.</h2>
+</div>
+<p>CloudEnergy’s model develops or aggregates renewable and storage assets, then maps contracted allocations to customers through an intelligent software layer.</p>
+</section>
+<section class="values section-shell">
+<article>
+<strong>100+ MW</strong>
+<span>Potential demand represented by LOIs</span>
+</article>
+<article>
+<strong>India · UK · Saudi Arabia</strong>
+<span>Initial focus markets within a global platform</span>
+</article>
+<article>
+<strong>2031</strong>
+<span>Target year for 1 GW operating ambition</span>
+</article>
+</section>
+<section class="page-cta">
+<div class="section-shell">
+<h2>Build the next energy system with us.</h2>
+<a class="btn btn-primary" href="/#early-access">Partner with CloudEnergy →</a>
+</div>
+</section>
+</main>
+<footer>
+<div class="section-shell footer-grid">
+<div>
+<a class="logo footer-logo" href="/">
+<img src="/cloudenergy-logo.png" alt="CloudEnergy">
+</a>
+<p>Hybrid renewable energy · BESS · intelligent allocation</p>
+</div>
+<div>
+<b>Explore</b>
+<a href="/#calculator">Calculator</a>
+<a href="/how-it-works">How it works</a>
+<a href="/data-centres">Data centres</a>
+<a href="/enterprise">Enterprise</a>
+</div>
+<div>
+<b>Company</b>
+<a href="/about">About</a>
+<a href="/#early-access">Early access</a>
+<a href="/#faq">FAQs</a>
+</div>
+<div>
+<b>Stage</b>
+<p>Project development</p>
+<p>Built for global energy markets</p>
+</div>
+</div>
+<div class="section-shell footer-bottom">
+<span>© 2026 Cloud Energy. All rights reserved.</span>
+<span>Calculator outputs are indicative and not commercial guarantees.</span>
+</div>
+</footer>
+<script type="module" src="/script.js">
+</script>
+</body>
+</html>
