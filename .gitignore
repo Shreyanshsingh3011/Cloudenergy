@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.vercel/
+.codex/
+upload/
+*.zip
+*.previous.zip
+.DS_Store
