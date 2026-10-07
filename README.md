@@ -2,6 +2,8 @@
 
 Global hybrid renewable-energy, battery-storage and digital capacity-reservation platform.
 
+**Founder / project lead:** [Shreyansh Singh](https://shreyanshsingh.in/) — [Cloud Energy profile](https://shreyanshsingh.in/cloud-energy/)
+
 ## Development
 
 ```bash
