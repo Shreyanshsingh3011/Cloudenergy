@@ -1,1 +1,40 @@
-{"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}
+{
+  "rewrites": [
+    {
+      "source": "/how-it-works",
+      "destination": "/how-it-works.html"
+    },
+    {
+      "source": "/data-centres",
+      "destination": "/data-centres.html"
+    },
+    {
+      "source": "/enterprise",
+      "destination": "/enterprise.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/how-it-works/",
+      "destination": "/how-it-works.html"
+    },
+    {
+      "source": "/data-centres/",
+      "destination": "/data-centres.html"
+    },
+    {
+      "source": "/enterprise/",
+      "destination": "/enterprise.html"
+    },
+    {
+      "source": "/about/",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

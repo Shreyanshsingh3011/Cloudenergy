@@ -1,0 +1,16 @@
+# Cloud Energy
+> Cloud Energy acquires and develops renewable-energy projects and helps customers access contracted clean-energy capacity without requiring rooftop solar.
+
+Cloud Energy combines renewable project development with digital energy allocation. Its website explains the customer model, enterprise use cases, and data-centre applications. Calculator results are indicative, not guaranteed.
+
+## Key pages
+- [Home](https://cloudenergy.online/): Overview and indicative solar savings calculator.
+- [How it works](https://cloudenergy.online/how-it-works): Demand assessment, project development, capacity reservation, operation, and customer visibility.
+- [Enterprise](https://cloudenergy.online/enterprise): Use cases for industry, commerce, data centres, and communities.
+- [Data centres](https://cloudenergy.online/data-centres): Remote solar capacity alongside existing grid supply.
+- [About](https://cloudenergy.online/about): Company direction and project-development approach.
+
+## Important
+- Cloud Energy's calculator is an indicative planning tool, not a quote or guaranteed saving.
+- Early-access registration does not require payment.
+- Project availability, energy allocation, savings, and settlement depend on local regulations and final customer agreements.
